@@ -2,6 +2,8 @@ import streamlit as st
 from streamlit_gsheets import GSheetsConnection
 import pandas as pd
 from datetime import datetime
+from datetime import datetime
+from zoneinfo import ZondeInfo
 
 # Fondo con degradado CSS personalizado (ejemplo: negro a púrpura de Twitch)
 st.markdown("""
@@ -82,7 +84,8 @@ with st.form(key="form_confesion", clear_on_submit=True):
 
                 # Determinar el siguiente ID
                 nuevo_id = len(df_existente) + 1 if df_existente is not None and not df_existente.empty else 1
-                fecha_hora = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                zona_horaria = ZoneInfo("America/Mexico_City")
+                fecha_hora = datetime.now(zona_horaria).strftime("%Y-%m-%d %H:%M:%S")
 
                 # Crear el nuevo registro
                 nueva_confesion = pd.DataFrame([{
