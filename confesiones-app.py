@@ -68,7 +68,7 @@ with st.form(key="form_confesion", clear_on_submit=True):
     confesion_texto = st.text_area(
         label="Tu confesión:",
         height=150,
-        max_chars=2000,
+        max_chars=1000,
         placeholder="Escribe aquí tu confesión sin pena..."
     )
     
