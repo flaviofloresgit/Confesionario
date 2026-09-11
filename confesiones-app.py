@@ -3,7 +3,7 @@ from streamlit_gsheets import GSheetsConnection
 import pandas as pd
 from datetime import datetime
 from datetime import datetime
-from zoneinfo import ZondeInfo
+from zoneinfo import ZoneInfo
 
 # Fondo con degradado CSS personalizado (ejemplo: negro a púrpura de Twitch)
 st.markdown("""
