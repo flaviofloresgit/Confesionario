@@ -49,7 +49,7 @@ st.title("🌠 Confesiones Anónimas!!")
 st.image("assets/Ballon dialog.png", width=500)
 
 st.markdown(
-    "⚠️IMPORTANTE ⚠️ "
+    "⚠️IMPORTANTE⚠️ "
 )
 
 st.write("Tu mensaje se enviará de forma **100% anónima**")
@@ -101,7 +101,7 @@ with st.form(key="form_confesion", clear_on_submit=True):
                 # Sobrescribir el Google Sheet con la lista actualizada
                 conn.update(data=df_actualizado)
 
-                st.success("¡Tu confesión se ha guardado exitosamente!")
+                st.success("¡Tu confesión se envió correctamente!")
             except Exception as e:
                 st.error(f"Ocurrió un error al guardar la confesión: {e}")
 
