@@ -2,8 +2,8 @@ name: Mantener App Activa
 
 on:
   schedule:
-    # Se ejecuta automáticamente cada 12 horas
-    - cron: '0 */12 * * *'
+    # Se ejecuta automáticamente cada 6 horas
+    - cron: '0 */6 * * *'
   # Permite ejecutar la prueba manualmente desde GitHub
   workflow_dispatch:
 
@@ -11,6 +11,6 @@ jobs:
   ping-app:
     runs-on: ubuntu-latest
     steps:
-      - name: Hacer ping a la app de Streamlit
+      - name: Hacer ping a la app y al health-check
         run: |
-          curl -s -o /dev/null -w "Status Code: %{http_code}\n" https://confesionario-shisqueic.streamlit.app/
+          curl -L -s -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" -o /dev/null -w "Status: %{http_code}\n" https://confesionario-shisqueic.streamlit.app/
